@@ -11,10 +11,9 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
             - sourceline: 'ppa:beineri/opt-qt-5.12.7-xenial'
           packages:
-            - g++-5
+            - g++
             - cmake
             - ninja-build
             - qt512base

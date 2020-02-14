@@ -1,7 +1,6 @@
 git:
   depth: 1
 dist: xenial
-sudo: false
 language: cpp
 matrix:
   include:

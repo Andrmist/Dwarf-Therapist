@@ -11,7 +11,7 @@ chmod +x linuxdeployqt*.AppImage
 ./linuxdeployqt*.AppImage --appimage-extract
 mv squashfs-root linuxdeployqt
 
-linuxdeployqt/AppRun "$APPDIR/usr/share/applications/dwarftherapist.desktop" -bundle-non-qt-libs -qmake=$QT_PREFIX/bin/qmake
+linuxdeployqt/AppRun "$APPDIR/usr/share/applications/dwarftherapist.desktop" -extra-plugins=platformthemes/libqgtk3.so -bundle-non-qt-libs -qmake=$QT_PREFIX/bin/qmake
 
 # Download and extract appimagetool
 wget "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"

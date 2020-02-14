@@ -5,6 +5,14 @@ ninja install
 # Add PDF manual
 install -m 0644 -D -t "$APPDIR/usr/share/doc/dwarftherapist/" "Dwarf Therapist.pdf"
 
+# Compile Qt style plugins
+git clone http://code.qt.io/qt/qtstyleplugins.git
+cd qtstyleplugins
+$QT_PREFIX/bin/qmake
+make
+sudo make install
+cd -
+
 # Download and extract linuxdeployqt (because of missing FUSE)
 wget "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
 chmod +x linuxdeployqt*.AppImage

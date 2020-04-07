@@ -19,4 +19,4 @@ cp "Dwarf Therapist.pdf" "$dest/doc/"
 # TODO openssl dlls
 # TODO style plugins
 
-zip -r "$dest.zip" "$dest/"
+7z a "$dest.zip" "$dest/"

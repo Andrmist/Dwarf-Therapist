@@ -1,5 +1,19 @@
 #!/bin/bash
 
+# Compile Qt style plugins
+git clone https://github.com/cvuchener/fusiondark
+cd fusiondark
+$QT_PREFIX/bin/qmake
+make
+make install
+cd -
+git clone https://github.com/cvuchener/DarkStyle
+cd DarkStyle
+$QT_PREFIX/bin/qmake
+make
+make install
+cd -
+
 dest=DwarfTherapist-${TRAVIS_TAG}-${QT_ARCH%%_*}
 mkdir $dest
 
@@ -17,6 +31,5 @@ mkdir "$dest/doc"
 cp "Dwarf Therapist.pdf" "$dest/doc/"
 
 # TODO openssl dlls
-# TODO style plugins
 
 7z a "$dest.zip" "$dest/"
